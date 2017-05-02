@@ -8,7 +8,9 @@ import java.util.List;
 public class JemapelleTigli {
     private Service service;
     private List<Idee> list;
-
+    /*
+    *
+     */
     JemapelleTigli(String serverString){
         String[] tigli = serverString.split(";");
         switch (tigli[0]){
