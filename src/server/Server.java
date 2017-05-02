@@ -24,9 +24,13 @@ public class Server {
 
             System.out.println("Connection from "+clientSocket.getRemoteSocketAddress());
 
-            DataInputStream inFromClient = new DataInputStream(clientSocket.getInputStream());
-            String requestClient = inFromClient.readUTF();
-            System.out.println(requestClient);
+            String requestClient = "";
+
+            while(!requestClient.equals("close")){
+                DataInputStream inFromClient = new DataInputStream(clientSocket.getInputStream());
+                requestClient = inFromClient.readUTF();
+                System.out.println("Received from client "+requestClient);
+            }
         }
         catch (IOException e) {
             System.err.println(e);

@@ -11,13 +11,15 @@ public class Client {
         Socket clientSocket = new Socket(adress,port);
 
         System.out.println("Connected to "+adress+"/"+port);
-        
+
         DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
 
-        System.out.print("Command : ");
-
-        String temp = inFromUser.readLine();
-        outToServer.writeUTF(temp);
-        outToServer.flush();
+        String temp = "";
+        while(!temp.equals("close")){
+            System.out.print("Request : ");
+            temp = inFromUser.readLine();
+            outToServer.writeUTF(temp);
+            outToServer.flush();
+        }
     }
 }
