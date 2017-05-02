@@ -1,3 +1,5 @@
+package server;
+
 import data.Idee;
 
 import java.util.List;
@@ -5,13 +7,11 @@ import java.util.List;
 /**
  * Created by Benjamin on 02/05/2017.
  */
-public class JemapelleTigli {
+public class AdapterService {
     private Service service;
     private List<Idee> list;
-    /*
-    *
-     */
-    JemapelleTigli(String serverString){
+
+    public AdapterService(String serverString){
         String[] tigli = serverString.split(";");
         switch (tigli[0]){
             case "add":

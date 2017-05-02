@@ -30,6 +30,9 @@ public class Server {
                 DataInputStream inFromClient = new DataInputStream(clientSocket.getInputStream());
                 requestClient = inFromClient.readUTF();
                 System.out.println("Received from client "+requestClient);
+
+                AdapterService adapter = new AdapterService(requestClient);
+
             }
         }
         catch (IOException e) {

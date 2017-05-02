@@ -1,3 +1,5 @@
+package server;
+
 /**
  * Enum représentant les différents services
  */
