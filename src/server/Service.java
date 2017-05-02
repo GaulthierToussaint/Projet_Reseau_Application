@@ -6,7 +6,8 @@ package server;
 public enum Service {
     LIST,
     CHOOSE,
-    ADD;
+    ADD,
+    STOP;
 
     @Override
     public String toString(){
