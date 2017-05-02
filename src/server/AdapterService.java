@@ -9,6 +9,7 @@ import java.util.List;
  * Created by Benjamin on 02/05/2017.
  */
 public class AdapterService {
+    private Service lastService;
     private List<Idee> list;
     private int size;
 
@@ -53,5 +54,9 @@ public class AdapterService {
 
     public Idee getList(int pos){
         return list.get(pos);
+    }
+
+    public Service getLastService(){
+        return lastService;
     }
 }
